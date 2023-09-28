@@ -106,10 +106,8 @@ while True:
         cotizarConsola()
 
     elif opcion == "7":
-        #cotizarScooter()
         pass
-    elif opcion == "8":
-        #cotizarBicicleta()
+    elif opcion == "8":     
         pass
     elif opcion == "9":
         print("\nSaliendo del programa.")
