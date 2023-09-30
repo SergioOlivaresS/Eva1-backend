@@ -1,12 +1,7 @@
 class Transporte:
-    CostoDespachoBase = 4000
+    def __init__(self, costoDespachoBase):
+        self.__costoDespachoBase = costoDespachoBase
 
     def calcularDespacho(self, peso):
-        costo_despacho = self.CostoDespachoBase + (peso * self.costoPorKg())
+        costo_despacho = self.__costoDespachoBase + (peso * self.costoPorKg())
         return costo_despacho
-
-    def costoPorKg(self):
-        pass
-
-    def imprimirCaracteristicas(self):
-        return f'Costo de Despacho: ${self.CostoDespachoBase}\n'

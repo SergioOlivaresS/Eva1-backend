@@ -1,8 +1,8 @@
 from Transporte import Transporte
 
 class Bicicleta(Transporte):
-    def __init__(self, aro, peso, precio, marca ,costo_despacho_base):
-        super().__init__(costo_despacho_base)
+    def __init__(self, aro, peso, precio, marca ,costoDespachoBase):
+        super().__init__(costoDespachoBase)
         self.__aro = aro
         self.__peso = peso
         self.__precio = precio

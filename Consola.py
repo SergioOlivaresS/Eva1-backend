@@ -19,10 +19,8 @@ class Consola(Tecnologia):
     def calcularDescuento(self):
         descuento_eficiencia = super().calcularDescuentos()
         descuento_total = descuento_eficiencia
-
         if "Lite" in self.__version:
             descuento_total += 0.05  
-
         return descuento_total
 
     def __str__(self):
