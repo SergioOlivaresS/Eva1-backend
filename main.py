@@ -76,7 +76,7 @@ def cotizarTv():
             descuento = producto.calcularDescuentos()
             precio_descuento = producto.get_precio() * (1 - descuento)
             print(producto)
-            print(f"Descuento Aplicado: {descuento * 100}%")
+            print(f"Descuento de: {descuento * 100}%")
             print(f"Precio Final: ${precio_descuento}\n")
         
 def cotizarConsola():
@@ -86,7 +86,7 @@ def cotizarConsola():
             descuento_redondeado = round(descuento * 100, 2)
             precio_descuento = producto.get_precio() * (1 - descuento)
             print(producto)
-            print(f"Descuento Aplicado: {descuento_redondeado}%")
+            print(f"Descuento de: {descuento_redondeado}%")
             print(f"Precio Total con Descuento: ${precio_descuento}\n")
 
 
@@ -101,7 +101,7 @@ def cotizarScooter():
                 print(producto)
                 print(f"Descuento de: {descuento * 100}%")
                 print(f"Costo de Despacho: ${costo_despacho}")
-                print(f"Producto total con despacho: ${precio_total}\n")
+                print(f"Precio total con despacho: ${precio_total}\n")
 
 def cotizarBicicleta():
     print("Esta cotizando bicicletas\n")
