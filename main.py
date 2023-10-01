@@ -30,7 +30,7 @@ def registrarTv():
     marca = input("Ingrese la marca del TV: ")
     voltaje = validarNumero("el voltaje del TV: ")
     precio = validarFloat("el precio del TV: ")
-    eficiencia = input("Ingrese la eficiencia del TV (A/B/C/D/E/F): ").lower()
+    eficiencia = input("Ingrese la eficiencia del TV (A/B/C/D/E/F): ").upper()
     tamanio = validarFloat("el tamaño del TV en pulgadas: ")
     tv = Tv(voltaje, precio, eficiencia,marca, tamanio)
     productos.append(tv)
@@ -42,7 +42,7 @@ def registrarConsola():
     marca = input("Ingrese la marca de la Consola: ")
     voltaje = validarNumero("el voltaje de la Consola: ")
     precio = validarFloat("el precio de la Consola: ")
-    eficiencia = input("Ingrese la eficiencia de la Consola (A/B/C/D/E/F): ").lower()
+    eficiencia = input("Ingrese la eficiencia de la Consola (A/B/C/D/E/F): ").upper()
     consola = Consola(nombreConsola, version, marca, voltaje, precio, eficiencia)
     productos.append(consola)
     print("Consola registrada exitosamente.")
@@ -54,7 +54,7 @@ def registrarScooter():
     velocidad = validarNumero("la velocidad del Scooter en km/h: ")
     peso = validarFloat("el peso del Scooter en kg: ")
     precio = validarFloat("el precio del Scooter: ")
-    eficiencia = input("Ingrese la eficiencia del Scooter (A/B/C/D/E/F): ").lower()
+    eficiencia = input("Ingrese la eficiencia del Scooter (A/B/C/D/E/F): ").upper()
     scooter = Scooter(marca, voltaje, aro, velocidad, peso, precio, eficiencia, 4000)
     productos.append(scooter)
     print("Scooter registrado exitosamente.")
@@ -80,13 +80,13 @@ def cotizarTv():
             print(f"Precio Final: ${precio_descuento}\n")
         
 def cotizarConsola():
-    print("Esta cotizando consolas\n")
     for producto in productos:
         if isinstance(producto, Consola):
             descuento = producto.calcularDescuento()
+            descuento_redondeado = round(descuento * 100, 2)
             precio_descuento = producto.get_precio() * (1 - descuento)
             print(producto)
-            print(f"Descuento Aplicado: {descuento * 100}%")
+            print(f"Descuento Aplicado: {descuento_redondeado}%")
             print(f"Precio Total con Descuento: ${precio_descuento}\n")
 
 
@@ -115,7 +115,7 @@ def cotizarBicicleta():
 
 
 def menu_principal():
-    print("\nBienvenidos que desea realizar:\n")
+    print("\nBienvenido que desea realizar:\n")
     print("1. Registrar Productos")
     print("2. Cotizar Productos")
     print("3. Salir")
